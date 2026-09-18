@@ -8,6 +8,7 @@
 
   <p>
     <a href="https://github.com/SalvatoreBonpinsiero/PulseCore/actions/workflows/release.yml">
+      <img src="https://github.com/SalvatoreBonpinsiero/PulseCore/actions/workflows/release.yml/badge.svg" alt="Build Status" />
     </a>
     <img src="https://img.shields.io/badge/C%2B%2B-20-00599C?logo=c%2B%2B&logoColor=white" alt="C++20" />
     <img src="https://img.shields.io/badge/GUI-Dear%20ImGui-blueviolet" alt="Dear ImGui" />
@@ -18,6 +19,10 @@
   <p>
     PulseCore is an ultra-fast hardware and socket telemetry tool engineered in <b>C++20</b> with <b>Dear ImGui</b>, <b>GLFW</b>, and hardware-accelerated <b>OpenGL 3.3</b>.
   </p>
+
+  <br />
+
+  <img src="https://raw.githubusercontent.com/SalvatoreBonpinsiero/PulseCore/refs/heads/main/prev.png" alt="PulseCore Dashboard Preview" width="850" style="max-width: 100%; border-radius: 8px;" />
 
 </div>
 
