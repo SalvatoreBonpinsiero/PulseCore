@@ -9,7 +9,7 @@
 void ApplyModernDarkTheme() {
     ImGuiStyle& style = ImGui::GetStyle();
 
-    // Скругления геометрии
+
     style.WindowRounding    = 8.0f;
     style.ChildRounding     = 6.0f;
     style.FrameRounding     = 5.0f;
@@ -17,12 +17,12 @@ void ApplyModernDarkTheme() {
     style.ScrollbarRounding = 4.0f;
     style.GrabRounding      = 4.0f;
 
-    // Внутренние отступы
+
     style.WindowPadding     = ImVec2(16.0f, 16.0f);
     style.FramePadding      = ImVec2(10.0f, 6.0f);
     style.ItemSpacing       = ImVec2(8.0f, 8.0f);
 
-    // Палитра Dark Zinc + Violet
+
     ImVec4* colors = style.Colors;
     colors[ImGuiCol_WindowBg]          = ImVec4(0.09f, 0.09f, 0.11f, 1.00f);
     colors[ImGuiCol_ChildBg]           = ImVec4(0.12f, 0.12f, 0.15f, 1.00f);
@@ -62,7 +62,7 @@ int main() {
     }
 
     glfwMakeContextCurrent(window);
-    glfwSwapInterval(1); // Включение V-Sync
+    glfwSwapInterval(1);
 
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
@@ -71,7 +71,7 @@ int main() {
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init("#version 330");
 
-    // Буфер истории задержки пакетов (Ping)
+ 
     std::vector<float> ping_history(60, 22.0f);
     float current_ping = 22.0f;
     bool watchdog_enabled = true;
@@ -84,7 +84,7 @@ int main() {
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        // Окно масштабируется под весь размер viewport
+       
         int w, h;
         glfwGetWindowSize(window, &w, &h);
         ImGui::SetNextWindowPos(ImVec2(0, 0));
@@ -96,7 +96,6 @@ int main() {
 
         ImGui::Begin("RootDashboard", nullptr, root_flags);
 
-        // Header панели
         ImGui::TextColored(ImVec4(0.55f, 0.38f, 0.98f, 1.0f), "[*] PULSECORE");
         ImGui::SameLine();
         ImGui::TextDisabled("| System & Network Sentinel");
@@ -108,7 +107,6 @@ int main() {
         ImGui::Separator();
         ImGui::Spacing();
 
-        // Левая панель: настройки
         ImGui::BeginChild("ConfigPanel", ImVec2(250, 0), true);
         ImGui::Text("Watchdog Configuration");
         ImGui::Spacing();
@@ -126,11 +124,9 @@ int main() {
 
         ImGui::SameLine();
 
-        // Правая панель: график задержки и состояние служб
         ImGui::BeginChild("MetricsPanel", ImVec2(0, 0), true);
         ImGui::Text("Network Latency Pipeline");
-        
-        // Симуляция колебания задержки
+
         current_ping += ((rand() % 100) / 10.0f - 4.8f);
         if (current_ping < 6.0f) current_ping = 6.0f;
         if (current_ping > 90.0f) current_ping = 90.0f;
@@ -151,7 +147,6 @@ int main() {
 
         ImGui::End();
 
-        // Рендеринг кадра
         ImGui::Render();
         glViewport(0, 0, w, h);
         glClearColor(0.09f, 0.09f, 0.11f, 1.0f);
