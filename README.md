@@ -8,7 +8,6 @@
 
   <p>
     <a href="https://github.com/SalvatoreBonpinsiero/PulseCore/actions/workflows/release.yml">
-      <img src="https://github.com/SalvatoreBonpinsiero/PulseCore/actions/workflows/release.yml/badge.svg" alt="Build Status" />
     </a>
     <img src="https://img.shields.io/badge/C%2B%2B-20-00599C?logo=c%2B%2B&logoColor=white" alt="C++20" />
     <img src="https://img.shields.io/badge/GUI-Dear%20ImGui-blueviolet" alt="Dear ImGui" />
